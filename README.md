@@ -1,6 +1,6 @@
 # Blockchain en Python
 
-Este repositorio está basado en un tutorial de [YouTube]("https://youtu.be/lbwK7kLjm4Y?si=Ti8AIhikKfwxBbG2").
+Este repositorio está basado en un tutorial de Youtube = https://youtu.be/lbwK7kLjm4Y?si=Ti8AIhikKfwxBbG2
 
 Este proyecto implementa una blockchain simple en Python utilizando Flask para la creación de una API web que permita operar con la blockchain.
 

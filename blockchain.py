@@ -10,8 +10,8 @@ class Blockchain:
         self.create_block(proof=1,previous_hash='0')    # '' porque usaremos SHA256 que solo acepta comilla simple
 
     def create_block(self,proof,previous_hash):
-        block = {'index':len(self.chain+1),
-                 'timestamp':str(datetime.datetime.now), # Tiempo de cuando se crea el bloque
+        block = {'index':len(self.chain)+1,
+                 'timestamp':str(datetime.datetime.now()), # Tiempo de cuando se crea el bloque
                  'proof': proof,
                  'previous_hash':previous_hash}
         self.chain.append(block)    # Adjuntamos el bloque a nuestra cadena
@@ -27,12 +27,12 @@ class Blockchain:
         check_proof = False
 
         while check_proof is False: # Hasta que encontremos el proof que resuelva el problema
-            hash_operation = hashlib.sha256(str(new_proof**2-previous_proof**2).encode()).hexdigest
+            hash_operation = hashlib.sha256(str(new_proof**2-previous_proof**2).encode()).hexdigest()
             if hash_operation[:4] == '0000':
                 check_proof = True
             else:
                 new_proof+=1
-            return new_proof
+        return new_proof
 
     # Debemos checkear el previous hash de la cadena
     def hash(self,block):
@@ -48,7 +48,7 @@ class Blockchain:
                 return False
             previous_proof = previous_block['proof']
             proof = block['proof']
-            hash_operation = hashlib.sha256(str(proof**2-previous_proof**2).encode()).hexdigest
+            hash_operation = hashlib.sha256(str(proof**2-previous_proof**2).encode()).hexdigest()
             if hash_operation[:4] != '0000':
                 return False
 
@@ -91,4 +91,4 @@ def get_chain():
     }
     return jsonify(response),200
 
-app.run()
+app.run(host='0.0.0.0',port=5000)

@@ -1,6 +1,6 @@
 # Blockchain en Python
 
-Este repositorio está basado en un tutorial de [YouTube]("https://youtu.be/lbwK7kLjm4Y?si=Ti8AIhikKfwxBbG2).
+https://youtu.be/lbwK7kLjm4Y?si=Ti8AIhikKfwxBbG2
 
 <iframe width="350" height="197" src="https://youtu.be/lbwK7kLjm4Y?si=Ti8AIhikKfwxBbG2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

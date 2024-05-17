@@ -1,8 +1,6 @@
 # Blockchain en Python
 
-![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)
-
-[Enviroment Anaconda](environment.yml)
+![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg) --------- [Enviroment Anaconda](environment.yml)
 
 Este repositorio está basado en un tutorial de Youtube => https://youtu.be/lbwK7kLjm4Y?si=Ti8AIhikKfwxBbG2
 

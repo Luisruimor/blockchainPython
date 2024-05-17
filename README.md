@@ -144,6 +144,7 @@ python scriptsToRun/scriptRun.py
 python scriptsToRun/scriptRunMac.py
 ```
 
+![Diagrama de la parte 2](img/diagrama.png)
 
 ### Peticiones disponibles (Aparte de las de la parte 1)
 Archivo para importar las peticiones en Postman: [postmanAPI.json](postmanAPI.json)

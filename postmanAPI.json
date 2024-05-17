@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ec840804-c614-4965-8aa2-538652e905a8",
-		"name": "Ez Python Blockhain",
+		"name": "Nodo 5000 - Blockchain",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "30274669"
 	},
@@ -30,6 +30,51 @@
 				"method": "GET",
 				"header": [],
 				"url": "http://localhost:5000/is_valid"
+			},
+			"response": []
+		},
+		{
+			"name": "Remplazar cadena (consenso)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/replace_chain"
+			},
+			"response": []
+		},
+		{
+			"name": "Conectar nodos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nodes\":[\"http://localhost:5001\",\r\n    \"http://localhost:5002\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/connect_node"
+			},
+			"response": []
+		},
+		{
+			"name": "Nueva transacción",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender\": \"Luis\",\r\n  \"receiver\": \"Adrian\",\r\n  \"amount\": 1034\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/new_transaction"
 			},
 			"response": []
 		}

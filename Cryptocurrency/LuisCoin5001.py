@@ -5,6 +5,7 @@ from flask import Flask, jsonify, request
 import requests
 from uuid import uuid4
 from urllib.parse import urlparse
+import time
 
 
 # Paso 1 - Crear nuestra blockchain
@@ -12,6 +13,7 @@ class Blockchain:
     def __init__(self):
         self.chain = []  # Al inicio nuestra cadena será una lista vacia
         self.transactions = []
+        self.mining_time = 0
         self.create_block(proof=1, previous_hash='0')  # '' porque usaremos SHA256 que solo acepta comilla simple
         self.nodes = set()
 
@@ -20,7 +22,8 @@ class Blockchain:
                  'timestamp': str(datetime.datetime.now()),  # Tiempo de cuando se crea el bloque
                  'proof': proof,
                  'previous_hash': previous_hash,
-                 'transactions': self.transactions
+                 'transactions': self.transactions,
+                 'mining_time': self.mining_time
                  }
         self.transactions = []
         self.chain.append(block)  # Adjuntamos el bloque a nuestra cadena
@@ -67,6 +70,7 @@ class Blockchain:
     def proof_of_work(self, previous_proof):
         new_proof = 1
         check_proof = False
+        start = time.time()
 
         while check_proof is False:  # Hasta que encontremos el proof que resuelva el problema
             hash_operation = hashlib.sha256(str(new_proof ** 2 - previous_proof ** 2).encode()).hexdigest()
@@ -74,6 +78,8 @@ class Blockchain:
                 check_proof = True
             else:
                 new_proof += 1
+        end = time.time()
+        self.mining_time = end - start
         return new_proof
 
     # Debemos checkear el previous hash de la cadena
@@ -125,7 +131,8 @@ def mine_block():
         'timestamp': block['timestamp'],
         'proof': block['proof'],
         'previous_hash': block['previous_hash'],
-        'transactions': block['transactions']
+        'transactions': block['transactions'],
+        'mining_time': block['mining_time']
     }
 
     return jsonify(response), 200

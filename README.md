@@ -133,8 +133,22 @@ Una vez ejecutado el programa, se levantará un servidor en `http://localhost:50
 
 Posteriormente antes de cualquier operación, se debe desde cada nodo conectarse a los demás nodos, para ello se debe ejecutar la peticion [POST /connect_node](#conectar-un-nuevo-nodo) en cada nodo.
 
-### Peticiones disponibles (Aparte de las de la parte 1)
+Para automatizar este proceso, he creado dos scripts para que ejecuten los nodos y se conecten entre ellos:
 
+#### Windows
+```bash'
+python scriptsToRun/scriptRun.py
+```
+
+#### MacOS
+
+```bash'
+python scriptsToRun/scriptRunMac.py
+```
+
+
+### Peticiones disponibles (Aparte de las de la parte 1)
+Archivo para importar las peticiones en Postman: [postmanAPI.json](postmanAPI.json)
 
 #### Añadir una Nueva Transacción
 Añade una nueva transacción a la cadena de bloques.
